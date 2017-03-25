@@ -1,0 +1,162 @@
+<html>
+<head>
+<script language="javascript">
+function valid()
+ {
+ n=document.myform.t1.value;
+  if(n.length==0)
+  {
+    alert("enter name");
+       return false;
+   }
+r1=new RegExp(/[a-z A-z]+$/)
+  if(!r1.test(n))
+   {
+       alert("enter only alphabets");
+     return false;
+  }
+if(n.length<6)
+  {
+    alert("enter name with atleast 6 charecters");
+       return false;
+   }
+ n1=document.myform.p1.value;
+  if(n1.length==0)
+  {
+    alert("enter password");
+       return false;
+   }
+if(n1.length<6)
+  {
+    alert("enter password with atleast 6 charecters");
+       return false;
+   }
+ n2=document.myform.p2.value;
+   if(n2!=n1)
+{
+ alert("passwrods dont match");
+  return false;
+}
+n3=document.myform.t2.value;
+if(n3.length==0)
+  {
+    alert("enter valid email");
+       return false;
+   }
+if(n3.length<6)
+  {
+    alert("enter emial with atleast 6 charecters");
+       return false;
+   }
+ r2=new RegExp(/^[a-z A-z|_]/)
+  if(!r2.test(n3))
+   {
+       alert("enter only alphabets");
+     return false;
+  }
+   if(n3.lastIndexOf('@')>n3.lastIndexOf('.') || n3.indexOf("@")==-1 || n3.indexOf(".")==-1)
+{
+alert("Enter valid email");
+return false;
+}
+n4=document.myform.t3.value;
+  if(n4.length==0)
+{
+  alert("enter phone number");
+  return false;
+}
+ r3=new RegExp(/[0-9]+$/)
+if(!r3.test(n4))
+  { 
+  alert("enter only numbers");
+  return false;
+}
+  if(n4.length!=10)
+{ 
+  alert("enter valid number");
+  return false;
+}
+a=document.myform.r.value;
+  if(a==NULL)
+{  
+  alert("gender not known");
+  return false;
+}
+}
+</script>
+</head>
+   <body bgcolor="green">
+<form name="myform" onsubmit="return valid()">
+<br><br><br><br><center>
+<table border="0" cellpadding="5">
+<tr>
+   <th colspan="2">REGISTRATION</th>
+</tr>   
+<tr>
+   <td>username</td>
+   <td><input type="text" name="t1"></td>
+   </tr>
+<tr>
+   <td>password</td>
+<td><input type="password" name="p1"></td>
+</tr>
+<tr>
+   <td>confirm password</td>
+<td><input type="password" name="p2"></td>
+</tr>
+<tr>
+   <td>email</td>
+<td><input type="text" name="t2"></td>
+</tr>
+<tr>
+   <td>phone number</td>
+<td><input type="text" name="t3"></td>
+</tr>
+<tr>
+   <td>DOB</td>
+<td>
+<select name="days">
+<script language="javascript">
+for(i=1;i<=31;i++)
+document.write("<option>"+i+"</option>");
+</script>
+</select>
+<select name="month"> 
+<script language="javascript">
+  for(m=1;m<=12;m++)
+   document.write("<option>"+m+"</option>"); 
+</script> </select>
+<select name="years">
+<script language="javascript">
+for(i=1990;i<=2013;i++)
+document.write("<option>"+i+"</option>");
+</script>
+</select>
+</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>M<input type="radio" name="r">F<input type="radio" name="r"></td>
+</tr>
+<tr>
+<td>Languages</td>
+<td>
+<input type="checkbox" name="languages" value="english">English
+<input type="checkbox" name="languages" value="telugu">Telugu
+<input type="checkbox" name="languages" value="hindi">Hindi
+<input type="checkbox" name="languages" value="tamil">Tamil
+</td>
+</tr>
+<tr>
+<td>ADDRESS</td>
+<td><textarea rows="10" cols="20"></textarea></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit">
+<input type="reset" value="cancel"></td>
+   </tr>
+</table>
+</center>
+</form>
+</body>
+</html>
